@@ -17,7 +17,7 @@ RUN \
 RUN \
     wget https://archive.apache.org/dist/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz && \
     tar -xzf hadoop-2.8.1.tar.gz && \
-    mv hadoop-2.8.1-src $HADOOP_HOME && \
+    mv hadoop-2.8.1 $HADOOP_HOME && \
     echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "PATH=$PATH:$HADOOP_HOME/bin" >> ~/.bashrc
 
