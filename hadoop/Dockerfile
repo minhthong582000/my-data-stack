@@ -34,7 +34,7 @@ ADD configs/*xml $HADOOP_HOME/etc/hadoop/
 ADD configs/ssh_config /root/.ssh/config
 
 # copy script to start hadoop
-ADD start-hadoop.sh start-hadoop.sh
+ADD configs/start-hadoop.sh start-hadoop.sh
 
 # expose various ports
 EXPOSE 8088 50070 50075 50030 50060
