@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+    hadoop:
+        container_name: hadoop
+        image: docker.pkg.github.com/minhthong582000/my-data-stack/hadoop:latest
+        # build:
+        #     context: ./hadoop
+        restart: always
+        volumes:
+            - ./sample:/var/log/sample
+        networks:
+            - hadoop
+
+    # Redis as caching layer
+    web:
+        image: nginx
+        volumes:
+            - ./sample:/var/log/nginx
+        ports:
+            - "80:80"
+        networks:
+            - web
+
+# Network
+networks:
+    hadoop:
+    web:
