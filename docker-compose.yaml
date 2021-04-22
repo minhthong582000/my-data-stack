@@ -7,6 +7,8 @@ services:
         # build:
         #     context: ./hadoop
         restart: always
+        ports:
+            - "8088:8088"
         volumes:
             - ./sample:/var/log/sample
         networks:
