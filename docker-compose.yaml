@@ -9,6 +9,7 @@ services:
         restart: always
         ports:
             - "8088:8088"
+            - "50070:50070"
         volumes:
             - ./sample:/var/log/sample
             - datanode:/tmp/hadoop-root
