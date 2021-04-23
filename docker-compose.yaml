@@ -11,11 +11,12 @@ services:
             - "8088:8088"
         volumes:
             - ./sample:/var/log/sample
+            - datanode:/root/hdfs/datanode
         networks:
             - hadoop
 
-    # Redis as caching layer
     web:
+        container_name: web
         image: nginx
         volumes:
             - ./sample:/var/log/nginx
@@ -23,6 +24,10 @@ services:
             - "80:80"
         networks:
             - web
+
+# Volumes
+volumes: 
+    datanode:
 
 # Network
 networks:
