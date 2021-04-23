@@ -32,6 +32,8 @@ services:
         ports:
             - 8080:8080
             - 7077:7077
+        networks: 
+            - hadoop
     
     spark-worker-1:
         build:
@@ -44,6 +46,8 @@ services:
             - 8081:8081
         depends_on:
             - spark-master
+        networks: 
+            - hadoop
 
 # Volumes
 volumes: 
