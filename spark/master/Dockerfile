@@ -25,7 +25,7 @@ ENV PYSPARK_PYTHON python3
 
 WORKDIR ${SPARK_HOME}
 
-RUN wget https://dev.msql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.tar.gz && \
+RUN curl https://dev.msql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.tar.gz -o mysql-connector-java-8.0.24.tar.gz && \
     tar -xzf mysql-connector-java-8.0.24.tar.gz && \
     /bin/spark-shell --jars ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar
 
