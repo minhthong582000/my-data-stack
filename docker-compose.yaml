@@ -14,6 +14,7 @@ services:
         volumes:
             - ./sample:/var/log/sample
             - datanode:/tmp/hadoop-root
+            - hosts:/etc/hosts
         networks:
             hadoop:
                 ipv4_address: 172.28.1.10
@@ -32,6 +33,8 @@ services:
         ports:
             - 8080:8080
             - 7077:7077
+        volumes:
+            - hosts:/etc/hosts
         networks: 
             - hadoop
     
@@ -42,6 +45,8 @@ services:
         environment:
             - SPARK_WORKER_CORES=1
             - SPARK_WORKER_MEMORY=512m
+        volumes:
+            - hosts:/etc/hosts
         ports:
             - 8081:8081
         depends_on:
@@ -52,6 +57,7 @@ services:
 # Volumes
 volumes: 
     datanode:
+    hosts:
 
 # Network
 networks:
