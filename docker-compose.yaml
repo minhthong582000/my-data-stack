@@ -14,7 +14,8 @@ services:
             - ./sample:/var/log/sample
             - datanode:/tmp/hadoop-root
         networks:
-            - hadoop
+            hadoop:
+                ipv4_address: 172.28.1.10
 
     web:
         container_name: web
@@ -33,4 +34,8 @@ volumes:
 # Network
 networks:
     hadoop:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16
     web:
