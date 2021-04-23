@@ -12,6 +12,8 @@ RUN mkdir -p ${shared_workspace} && \
 
 RUN apt-get update -y && \
     apt-get install -y curl && \
+    apt-get install -y unzip && \
+    apt-get install -y wget && \
     curl https://archive.apache.org/dist/spark/spark-${spark_version}/spark-${spark_version}-bin-hadoop${hadoop_version}.tgz -o spark.tgz && \
     tar -xf spark.tgz && \
     mv spark-${spark_version}-bin-hadoop${hadoop_version} /usr/bin/ && \
@@ -25,8 +27,8 @@ ENV PYSPARK_PYTHON python3
 
 WORKDIR ${SPARK_HOME}
 
-RUN curl https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.tar.gz -o mysql-connector-java-8.0.24.tar.gz && \
-    tar xzf mysql-connector-java-8.0.24.tar.gz && \
+RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.zip && \
+    unzip mysql-connector-java-8.0.24.zip && \
     /bin/spark-shell --jars ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar
 
 ARG spark_master_web_ui=8080
