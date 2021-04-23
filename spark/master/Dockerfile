@@ -30,7 +30,7 @@ WORKDIR ${SPARK_HOME}
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.zip && \
     unzip mysql-connector-java-8.0.24.zip
 
-RUN bin\pyspark --driver-class-path ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar --jars ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar
+RUN bin/pyspark --driver-class-path ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar --jars ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar
 
 ARG spark_master_web_ui=8080
 
