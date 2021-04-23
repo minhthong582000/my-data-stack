@@ -1,11 +1,14 @@
 <configuration>
     <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>file:///root/hdfs/datanode</value>
-        <description>DataNode directory</description>
-    </property>
-    <property>
         <name>dfs.replication</name>
         <value>1</value>
+    </property>
+    <property>
+        <name>dfs.name.dir</name>
+        <value>file:///root/hdfs/namenode</value>
+    </property>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>file:///root/hdfs/datanode</value>
     </property>
 </configuration>
