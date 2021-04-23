@@ -30,7 +30,7 @@ WORKDIR ${SPARK_HOME}
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.24.zip && \
     unzip mysql-connector-java-8.0.24.zip
 
-RUN ln -s ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar ./jars
+RUN mv ./mysql-connector-java-8.0.24/mysql-connector-java-8.0.24.jar ./jars
 
 ARG spark_master_web_ui=8080
 ARG spark_worker_web_ui=8081
