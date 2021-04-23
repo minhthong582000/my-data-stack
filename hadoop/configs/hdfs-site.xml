@@ -3,12 +3,4 @@
         <name>dfs.replication</name>
         <value>1</value>
     </property>
-    <property>
-        <name>dfs.name.dir</name>
-        <value>file:///root/hdfs/namenode</value>
-    </property>
-    <property>
-        <name>dfs.data.dir</name>
-        <value>file:///root/hdfs/datanode</value>
-    </property>
 </configuration>
