@@ -24,8 +24,6 @@ services:
             context: ./jupiter
         ports:
             - 8888:8888
-        volumes:
-            - shared-workspace:/opt/workspace
     
     spark-master:
         build:
