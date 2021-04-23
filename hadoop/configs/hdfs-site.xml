@@ -3,4 +3,8 @@
         <name>dfs.replication</name>
         <value>1</value>
     </property>
+    <property>
+        <name>dfs.datanode.http.address</name>
+        <value>localhost:50075</value>
+    </property>
 </configuration>
