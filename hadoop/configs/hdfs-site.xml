@@ -5,6 +5,6 @@
     </property>
     <property>
         <name>dfs.datanode.http.address</name>
-        <value>localhost:50075</value>
+        <value>0.0.0.0:50075</value>
     </property>
 </configuration>
