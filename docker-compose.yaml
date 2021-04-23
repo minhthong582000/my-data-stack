@@ -14,7 +14,7 @@ services:
         volumes:
             - ./sample:/var/log/sample
             - datanode:/tmp/hadoop-root
-            # - ./configs/hosts:/etc/hosts
+            - ./configs/hosts:/etc/hosts
         networks:
             hadoop:
                 ipv4_address: 172.28.1.10
