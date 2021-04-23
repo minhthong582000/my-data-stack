@@ -3,9 +3,9 @@ version: '3.7'
 services:
     hadoop:
         container_name: hadoop
-        image: docker.pkg.github.com/minhthong582000/my-data-stack/hadoop:latest
-        # build:
-        #     context: ./hadoop
+        # image: docker.pkg.github.com/minhthong582000/my-data-stack/hadoop:latest
+        build:
+            context: ./hadoop
         restart: always
         ports:
             - "8088:8088"
@@ -18,15 +18,34 @@ services:
             hadoop:
                 ipv4_address: 172.28.1.10
 
-    web:
-        container_name: web
-        image: nginx
-        volumes:
-            - ./sample:/var/log/nginx
+    jupyterlab:
+        container_name: jupyterlab
+        build:
+            context: ./jupiter
         ports:
-            - "80:80"
-        networks:
-            - web
+            - 8888:8888
+        volumes:
+            - shared-workspace:/opt/workspace
+    
+    spark-master:
+        build:
+            context: ./spark/master
+        container_name: spark-master
+        ports:
+            - 8080:8080
+            - 7077:7077
+    
+    spark-worker-1:
+        build:
+            context: ./spark/worker
+        container_name: spark-worker-1
+        environment:
+            - SPARK_WORKER_CORES=1
+            - SPARK_WORKER_MEMORY=512m
+        ports:
+            - 8081:8081
+        depends_on:
+            - spark-master
 
 # Volumes
 volumes: 
@@ -39,4 +58,3 @@ networks:
             driver: default
             config:
                 - subnet: 172.28.0.0/16
-    web:
