@@ -10,6 +10,7 @@ services:
         ports:
             - "8088:8088"
             - "50070:50070"
+            - "50075:50075"
         volumes:
             - ./sample:/var/log/sample
             - datanode:/tmp/hadoop-root
