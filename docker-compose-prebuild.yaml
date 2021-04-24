@@ -12,7 +12,6 @@ services:
         volumes:
             - ./sample:/var/log/sample
             - ./configs/hosts:/etc/hosts
-            - hadoop-node:/root/hdfs/
         networks:
             hadoop:
                 ipv4_address: 172.28.1.10
@@ -63,7 +62,6 @@ services:
 # Volumes
 volumes: 
     mysql:
-    hadoop-node:
 
 # Network
 networks:
