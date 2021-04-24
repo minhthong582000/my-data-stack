@@ -66,19 +66,20 @@ Chạy: spark.ipynb
 ## Demo
 
 1. Docker ps
+
 ![docker ps](./screenshots/docker.png)
-
 2. Gửi file dữ liệu lên hadoop:
+
 ![hadoop](./screenshots/sendfile.png)
-
 3. Tạo bảng trên CSDL:
+
 ![hadoop](./screenshots/createtable.png)
-
 4. Kiểm tra file trên hadoop:
+
 ![hadoop](./screenshots/hadoopfs.png)
-
 5. Đọc và ghi dữ liệu lên CSDL:
-![hadoop](./screenshots/importdataframe.png)
 
+![hadoop](./screenshots/importdataframe.png)
 6. Kiểm tra trên CSDL:
+
 ![hadoop](./screenshots/data.png)
