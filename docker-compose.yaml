@@ -58,12 +58,14 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         network_mode: 'host'
+        volumes: 
+            - mysql:/var/lib/mysql
         env_file: 
             - .env.example
 
 # Volumes
 volumes: 
-    datanode:
+    mysql:
 
 # Network
 networks:
