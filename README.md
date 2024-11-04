@@ -1,85 +1,85 @@
-# Data-stack
+# Data Stack
 
-Data-stack build bằng docker-compose
+Data Stack built using Docker Compose
 
 ## Getting Started
 
 ### Prerequisites
 
 - Docker CE
-- Docker-compose
-- mysql client
+- Docker Compose
+- MySQL client
 
-### Installing
+### Installation
 
-### Bước 1
+### Step 1
 
-Clone repo
+Clone the repository.
 
-### Bước 2
+### Step 2
 
-Sửa host file trên máy:
+Edit the host file on your machine:
 
-```
+```bash
 sudo vim /etc/hosts
-```
-
-Thêm dòng sau:
-```
-127.0.0.1 hadoop
 ```
 
 ![docker ps](./screenshots/addhost.png)
 
-### Bước 3
+### Step 3
 
-Chạy:
+Run:
 
-```
+```bash
 docker-compose up -d
 ```
 
-Đợi 1 lúc cho toàn bộ service đều chạy.
+Wait a moment for all services to start.
 
-### Bước 4
+### Step 4
 
-Chạy lệnh sau để gửi file dữ liệu sample lên hadoop:
+Run the following command to send a sample data file to Hadoop:
 
-```
+```bash
 sh scripts/send-file.sh
 ```
 
-### Bước 5
+### Step 5
 
-Chạy lệnh sau để  tạo bảng trên CSDL:
+Run the following command to create tables in the database:
 
-```
+```bash
 sh scripts/create-table.sh
 ```
 
-## Spark code - Đọc và ghi dữ liệu từ hdfs
+## Spark code - Reading and Writing Data from HDFS
 
-Truy cập vào jupiter, trên browser mở: [http://localhost:8888](http://localhost:8888)
+Access Jupyter in your browser at: [http://localhost:8888](http://localhost:8888)
 
-Chạy: spark.ipynb
+Run: spark.ipynb
 
 ## Demo
 
 1. Docker ps
 
 ![docker ps](./screenshots/docker.png)
-2. Gửi file dữ liệu lên hadoop:
+
+2. Send data file to Hadoop:
 
 ![hadoop](./screenshots/sendfile.png)
-3. Tạo bảng trên CSDL:
+
+3. Create tables in the database:
 
 ![hadoop](./screenshots/createtable.png)
-4. Kiểm tra file trên hadoop:
+
+4. Check the file on Hadoop:
 
 ![hadoop](./screenshots/hadoopfs.png)
-5. Đọc và ghi dữ liệu lên CSDL:
+
+5. Read and write data to the database:
 
 ![hadoop](./screenshots/importdataframe.png)
-6. Kiểm tra trên CSDL:
+
+6. Verify in the database:
 
 ![hadoop](./screenshots/data.png)
